@@ -1,4 +1,4 @@
-# Performance Backend
+# Vitals Tracer Backend
 
 An API Server for vitals analytics dashboard. Built with fastify.
 
