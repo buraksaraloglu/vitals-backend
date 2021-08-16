@@ -4,7 +4,12 @@ const path = require('path');
 const AutoLoad = require('fastify-autoload');
 const rateLimit = require('fastify-rate-limit');
 
-const redis = require('redis').createClient({ host: 'localhost', port: 6379 });
+const config = require('./config/app');
+
+const redis = require('redis').createClient({
+	url: `redis://${config.redisHost}`,
+	password: config.redisPassword
+});
 
 module.exports = async function (fastify, options) {
 	fastify.register(require('fastify-cors'), {

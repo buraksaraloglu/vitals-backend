@@ -8,4 +8,6 @@ const loadEnvironmentVariable = (key) => {
 
 module.exports = {
 	mongoDBUrl: loadEnvironmentVariable('MONGODB_URL'),
+	redisHost: loadEnvironmentVariable('REDIS_HOST'),
+	redisPassword: loadEnvironmentVariable('REDIS_PWD')
 };
