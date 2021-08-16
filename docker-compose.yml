@@ -1,11 +1,5 @@
 version: '3'
 services:
-  redis:
-    image: redis
-    container_name: cache
-    expose:
-      - 6379
-
   app:
     build: .
     ports:
