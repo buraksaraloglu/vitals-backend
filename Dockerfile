@@ -1,17 +1,17 @@
+#Specify a base image
 FROM node:16-alpine
-WORKDIR '/var/www/app'
-# EXPOSE 3000
 
-# # Use latest version of npm
-# RUN npm install npm@latest -g
+#Specify a working directory
+WORKDIR /usr/app
 
-# COPY package.json package-lock.json* ./
+#Copy the dependencies file
+COPY ./package.json ./
 
-# RUN npm install --no-optional && npm cache clean --force
+#Install dependencies
+RUN npm install
 
-# # copy in our source code last, as it changes the most
-# WORKDIR /usr
+#Copy remaining files
+COPY ./ ./
 
-# COPY . .
-
-# CMD ["node", "app.js"]
+#Default command
+CMD ["npm","start"]
